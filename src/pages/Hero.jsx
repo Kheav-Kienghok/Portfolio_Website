@@ -18,7 +18,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
         >
           👋 Hi, I'm{" "}
-          <span className="text-5xl md:text-7xl font-extrabold text-blue-600 uppercase block sm:inline">
+          <span className="text-5xl md:text-7xl font-extrabold text-blue-600 uppercase block sm:inline sm:text-blue-600 ">
             Kienghok
           </span>
         </motion.h1>
@@ -36,9 +36,10 @@ const Hero = () => {
 
         {/* Buttons & Social Links */}
         <div className="mt-6 flex flex-col md:flex-row items-center gap-4">
-          <button className="font-funnel bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 transition">
+          <button className="font-funnel bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out cursor-pointer">
             Hire Me
           </button>
+
           <div className="flex gap-4 text-gray-700">
             <a href="#" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaGithub />

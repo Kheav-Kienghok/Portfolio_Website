@@ -6,11 +6,13 @@ function App() {
   return (
 
     <div
-      className="bg-cover bg-center h-screen"
+      className="bg-cover bg-center min-h-screen sm:h-auto"
       style={{ backgroundImage: 'url(/images/Background.jpg)' }}
     >
-      <NavBar />
-      <Hero />
+      <div className="overflow-hidden">
+        <NavBar />
+        <Hero />
+      </div>
     </div>
 
   )
