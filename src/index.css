@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Funnel+Sans&family=Inter:opsz,wght@14..32,600&family=Nunito&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@import "tailwindcss";
+
+.font-funnel {
+    font-family: 'Funnel Sans', sans-serif;
+}
+
+.font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+}
