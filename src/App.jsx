@@ -3,7 +3,6 @@ import BackgroundContainer from './pages/components/BackgroundContainer';
 import NavBar from "./pages/NavBar";
 import Home from "./pages/Home";
 import Skills from "./pages/Skills";
-import Achievement from './pages/Achievement';
 
 function App() {
   
@@ -19,7 +18,6 @@ function App() {
 
         <div id="skills">
           <Skills />
-          <Achievement />
         </div>
 
     </BrowserRouter>

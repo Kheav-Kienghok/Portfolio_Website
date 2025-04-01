@@ -18,9 +18,10 @@ const Home = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          style={{ WebkitTransform: 'translate3d(0, 0, 0)' }} // added Webkit transform here
         >
           👋 Hi, I'm{" "}
-          <span className="text-5xl md:text-7xl font-extrabold text-blue-600 uppercase block sm:inline sm:text-blue-600 ">
+          <span className="text-5xl md:text-7xl font-extrabold text-blue-600 uppercase block sm:inline sm:text-blue-600">
             Kienghok
           </span>
         </motion.h1>
@@ -40,7 +41,7 @@ const Home = () => {
         {/* Buttons & Social Links */}
         <div className="mt-6 flex flex-col md:flex-row items-center gap-4">
 
-          <button className="font-funnel bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out cursor-pointer">
+          <button className="font-funnel bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg shadow-lg focus:scale-105 active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
             Hire Me
           </button>
 
@@ -49,10 +50,10 @@ const Home = () => {
             <Link to="https://github.com/Kheav-Kienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaGithub />
             </Link>
-            <Link to="https://www.linkedin.com/in/kienghok-kheav" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+            <Link to="www.linkedin.com/in/kienghok-kheav-1896b5289" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaLinkedin />
             </Link>
-            <Link to="https://www.youtube.com" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+            <Link to="https://www.youtube.com/@KheavKienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaYoutube />
             </Link>
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { FaPython, FaJs, FaAws, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, FaGit, FaGithub, FaJava } from "react-icons/fa";
-import { SiFastapi, SiFlask, SiExpress, SiMysql, SiSqlite, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { SiFastapi, SiMysql, SiSqlite, SiMongodb, SiTailwindcss } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import AWS_Achievement from "./components/AWS_Achievement";
 
 const Skills = () => {
   return (
@@ -49,7 +50,6 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Version Control & Tools Horizontal */}
       <div className="border-2 border-gray-300 rounded-lg p-4 mt-8">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">Version Control & Tools</h3>
         <div className="flex justify-center gap-8 flex-wrap">
@@ -67,6 +67,11 @@ const Skills = () => {
           ))}
         </div>
       </div>
+      
+      {/* Version Control & Tools Horizontal */}
+      <AWS_Achievement />
+
+
     </div>
   );
 };
