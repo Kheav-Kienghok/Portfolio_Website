@@ -2,13 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import myPhoto from "../assets/portfolio.jpg";
+import { Link } from 'react-router-dom';
 
-const Hero = () => {
+const Home = () => {
   return (
-    <div className="flex flex-col-reverse md:grid md:grid-cols-[2fr_1fr] lg:grid-cols-[1.5fr_0.9fr] items-center max-w-5xl mx-auto px-6 py-5 md:px-2 md:py-8 gap-10">
+    
+    <div className="flex flex-col-reverse md:grid md:grid-cols-[2fr_1fr] lg:grid-cols-[1.5fr_0.9fr] items-center max-w-5xl mx-auto px-4 py-3 md:px-2 md:py-20 gap-10">
       
       {/* Left Content */}
-      <div className="w-full text-center md:text-left md:mx-3">
+      <div className="w-full text-center md:text-left md:mx-3 mt-[-15px] lg:mt-[-5px]">
         
         {/* Animated Heading */}
         <motion.h1
@@ -30,26 +32,30 @@ const Hero = () => {
 
         {/* Description */}
         <blockquote className="font-serif text-gray-500 mt-2 lg:mt-4 italic border-l-4 pl-4 border-blue-500 text-sm sm:text-base">
-          As a junior in computer science, I’m deeply passionate about cloud engineering and web development. 
-          I thrive on exploring cutting-edge technologies and view challenges as opportunities to grow and learn.
+          As a junior in computer science at <Link to="https://www.aupp.edu.kh" target="_blank"><i>AUPP</i></Link>, I’m deeply passionate about cloud engineering and web development. 
+          I thrive on exploring cutting-edge technologies and see challenges as opportunities to grow and learn. I’m also eager to dive 
+          into new innovations, with a particular interest in automation.
         </blockquote>
 
         {/* Buttons & Social Links */}
         <div className="mt-6 flex flex-col md:flex-row items-center gap-4">
+
           <button className="font-funnel bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 ease-in-out cursor-pointer">
             Hire Me
           </button>
 
           <div className="flex gap-4 text-gray-700">
-            <a href="#" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+
+            <Link to="https://github.com/Kheav-Kienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaGithub />
-            </a>
-            <a href="#" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+            </Link>
+            <Link to="https://www.linkedin.com/in/kienghok-kheav" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaLinkedin />
-            </a>
-            <a href="#" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+            </Link>
+            <Link to="https://www.youtube.com" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaYoutube />
-            </a>
+            </Link>
+
           </div>
         </div>
       </div>
@@ -67,4 +73,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;

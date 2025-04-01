@@ -1,21 +1,30 @@
+import { BrowserRouter } from 'react-router-dom';
+import BackgroundContainer from './pages/components/BackgroundContainer';
 import NavBar from "./pages/NavBar";
-import Hero from "./pages/Hero";
+import Home from "./pages/Home";
+import Skills from "./pages/Skills";
+import Achievement from './pages/Achievement';
 
 function App() {
-
+  
   return (
 
-    <div
-      className="bg-cover bg-center min-h-screen sm:h-auto"
-      style={{ backgroundImage: 'url(/images/Background.jpg)' }}
-    >
-      <div className="overflow-hidden">
-        <NavBar />
-        <Hero />
-      </div>
-    </div>
+    <BrowserRouter>
+      <BackgroundContainer/>
+      <NavBar />
 
-  )
+        <div id="home">
+          <Home />
+        </div>
+
+        <div id="skills">
+          <Skills />
+          <Achievement />
+        </div>
+
+    </BrowserRouter>
+
+  );
 }
 
 export default App
