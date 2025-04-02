@@ -13,17 +13,17 @@ function App() {
       <BackgroundContainer/>
       <NavBar />
 
-        <div id="home">
-          <Home />
-        </div>
+      <div id="home">
+        <Home />
+      </div>
 
-        <div id="skills">
-          <Skills />
-        </div>
+      <div id="skills">
+        <Skills />
+      </div>
 
-        <div id="projects">
-          <Projects />
-        </div>
+      <div id="projects">
+        <Projects />
+      </div>
 
     </BrowserRouter>
 

@@ -6,7 +6,8 @@ import AWS_Achievement from "./components/AWS_Achievement";
 
 const Skills = () => {
   return (
-    <div className="font-[Lato-Thin] max-w-5xl mx-auto py-30 px-4 text-center">
+    <div className="font-[Lato-Thin] max-w-5xl mx-auto py-10 px-4 text-center">
+      
       <h2 className="font-funnel text-4xl font-extrabold text-blue-600 mb-8">Technical Skills</h2>
       <p className="text-lg text-gray-600 mb-10">Here are some of the technologies and tools I work with:</p>
 

@@ -5,7 +5,7 @@ const AWS_Achievement = () => {
 
   return (
 
-    <div className="font-[Lato-Thin] border-2 border-gray-300 rounded-lg p-4 mt-8">
+    <div className="font-[Lato-Thin] border-2 border-gray-300 rounded-lg p-4 mt-8 mb-15">
       <h3 className="font-funnel text-xl font-semibold text-gray-800 mb-4">AWS Certifications</h3>
       <p className="text-gray-600 mb-7 text-lg">I have developed expertise in AWS cloud technologies. Below are my certifications:</p>
 

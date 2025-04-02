@@ -45,10 +45,10 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="font-[Lato-Thin] py-16">
+    <div className="font-[Lato-Thin] py-10">
       <div className="container mx-auto px-10 lg:px-40">
 
-        <h2 className="font-funnel text-4xl font-extrabold text-center text-blue-600 mb-6">Projects That Define Me</h2>
+        <h2 className="font-funnel text-3xl lg:text-4xl font-extrabold text-center text-blue-600 mb-6">Projects That Define Me</h2>
         <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-10">
           A collection of projects where I turn ideas into reality. From AI to web development, each one reflects my passion for building efficient and impactful solutions.
         </p>
