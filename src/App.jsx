@@ -3,6 +3,7 @@ import BackgroundContainer from './pages/components/BackgroundContainer';
 import NavBar from "./pages/NavBar";
 import Home from "./pages/Home";
 import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
 
 function App() {
   
@@ -18,6 +19,10 @@ function App() {
 
         <div id="skills">
           <Skills />
+        </div>
+
+        <div id="projects">
+          <Projects />
         </div>
 
     </BrowserRouter>

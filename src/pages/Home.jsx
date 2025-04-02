@@ -47,10 +47,10 @@ const Home = () => {
 
           <div className="flex gap-4 text-gray-700">
 
-            <Link to="https://github.com/Kheav-Kienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+            <Link to="https://www.github.com/Kheav-Kienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaGithub />
             </Link>
-            <Link to="www.linkedin.com/in/kienghok-kheav-1896b5289" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
+            <Link to="https://www.linkedin.com/in/kienghok-kheav-1896b5289" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
               <FaLinkedin />
             </Link>
             <Link to="https://www.youtube.com/@KheavKienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">

@@ -6,11 +6,11 @@ import AWS_Achievement from "./components/AWS_Achievement";
 
 const Skills = () => {
   return (
-    <div className="max-w-5xl mx-auto py-30 px-4 text-center">
-      <h2 className="text-4xl font-bold text-blue-600 mb-8">Technical Skills</h2>
-      <p className="text-lg text-gray-600 mb-12">Here are some of the technologies and tools I work with:</p>
+    <div className="font-[Lato-Thin] max-w-5xl mx-auto py-30 px-4 text-center">
+      <h2 className="font-funnel text-4xl font-extrabold text-blue-600 mb-8">Technical Skills</h2>
+      <p className="text-lg text-gray-600 mb-10">Here are some of the technologies and tools I work with:</p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-lg">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-2 gap-8 text-lg">
         {[  
           { category: "Frontend", skills: [
             { name: "HTML5", icon: <FaHtml5 size={50} className="text-red-500" />, border: "border-red-500" },
@@ -35,7 +35,7 @@ const Skills = () => {
           ]}
         ].map((section, index) => (
           <div key={index} className="border-2 border-gray-300 rounded-lg p-4">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">{section.category}</h3>
+            <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4">{section.category}</h3>
             <div className="grid grid-cols-2 gap-4">
               {section.skills.map((skill, i) => (
                 <div key={i} className="flex flex-col items-center group p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-4">
@@ -51,7 +51,7 @@ const Skills = () => {
       </div>
 
       <div className="border-2 border-gray-300 rounded-lg p-4 mt-8">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">Version Control & Tools</h3>
+        <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4">Version Control & Tools</h3>
         <div className="flex justify-center gap-8 flex-wrap">
           {[  
             { name: "Git", icon: <FaGit size={50} className="text-red-500" /> },

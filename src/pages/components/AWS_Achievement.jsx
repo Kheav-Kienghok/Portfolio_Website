@@ -5,9 +5,10 @@ const AWS_Achievement = () => {
 
   return (
 
-    <div className="border-2 border-gray-300 rounded-lg p-4 mt-8">
-      <h3 className="text-xl font-semibold text-gray-800 mb-4">AWS Certifications</h3>
-      <p className="text-gray-600 mb-8">I have developed expertise in AWS cloud technologies. Below are my certifications:</p>
+    <div className="font-[Lato-Thin] border-2 border-gray-300 rounded-lg p-4 mt-8">
+      <h3 className="font-funnel text-xl font-semibold text-gray-800 mb-4">AWS Certifications</h3>
+      <p className="text-gray-600 mb-7 text-lg">I have developed expertise in AWS cloud technologies. Below are my certifications:</p>
+
       <div className="flex justify-center gap-8 flex-wrap">
         <Link to="https://www.credly.com/badges/33cf15f7-b082-4d99-925e-ae13cfd55b83" target="_blank" className="p-2 border-2 border-gray-300 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-xl hover:border-blue-500">
           <img

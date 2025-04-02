@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-// If you are using react-scroll for smooth scrolling within the page
 import { Link as ScrollLink } from 'react-scroll';
 import { Link } from 'react-router-dom';
 
@@ -43,7 +42,14 @@ const NavBar = () => {
           </li>
 
           <li className='p-5'>
-            <Link to="/projects">Projects</Link>
+            <ScrollLink 
+                to="projects" 
+                smooth={true} 
+                offset={50} 
+                duration={500}
+              >
+                Projects
+            </ScrollLink>
           </li>
 
           <li className='p-5'>
