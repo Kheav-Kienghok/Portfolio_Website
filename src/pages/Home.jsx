@@ -41,9 +41,23 @@ const Home = () => {
         {/* Buttons & Social Links */}
         <div className="mt-6 flex flex-col md:flex-row items-center gap-4">
 
-          <button className="font-funnel bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg shadow-lg focus:scale-105 active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
+          {/* Hire Me Button */}
+          <Link
+            to="https://t.me/anshishui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-funnel bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg shadow-lg focus:scale-105 active:scale-95 transition-all duration-300 ease-in-out cursor-pointer text-center"
+            style={{
+              background: "linear-gradient(to right, #3b82f6, #2563eb, #1e40af)",
+              backgroundColor: "#2563eb", // Fallback solid color
+            }}
+            onClick={(e) => {
+              e.preventDefault();
+              window.open("https://t.me/anshishui", "_blank", "noopener,noreferrer");
+            }}
+          >
             Hire Me
-          </button>
+          </Link>
 
           <div className="flex gap-4 text-gray-700">
 
