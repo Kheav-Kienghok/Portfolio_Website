@@ -21,18 +21,31 @@ const Home = () => {
           style={{ WebkitTransform: 'translate3d(0, 0, 0)' }} // added Webkit transform here
         >
           👋 Hi, I'm{" "}
-          <span className="text-5xl md:text-7xl font-extrabold text-blue-600 uppercase block sm:inline sm:text-blue-600">
+          <span className="text-5xl md:text-7xl font-extrabold text-blue-600 uppercase block sm:inline sm:text-blue-600"
+            style={{
+              color: '#2563eb', // Ensures fallback for older iOS
+            }}
+          >
             Kienghok
           </span>
         </motion.h1>
 
         {/* Subtitle */}
-        <h2 className="font-[Nunito] text-2xl lg:mt-4 sm:text-3xl md:text-4xl text-gray-600 uppercase py-2">
+        <h2 className="font-[Nunito] text-2xl lg:mt-4 sm:text-3xl md:text-4xl text-gray-600 uppercase py-2"
+          style={{
+            color: '#4B5563' // Equivalent to Tailwind's text-gray-600
+          }}
+        >
           A Cloud Developer
         </h2>
 
         {/* Description */}
-        <blockquote className="font-serif text-gray-500 mt-2 lg:mt-4 italic border-l-4 pl-4 border-blue-500 text-sm sm:text-base">
+        <blockquote className="font-serif text-gray-500 mt-2 lg:mt-4 italic border-l-4 pl-4 border-blue-500 text-sm sm:text-base"
+          style={{
+            color: '#6b7280', // Equivalent to text-gray-500
+            borderLeft: '4px solid #3b82f6', // Equivalent to border-blue-500
+          }}
+        >
           As a junior in computer science at <Link to="https://www.aupp.edu.kh" target="_blank"><i>AUPP</i></Link>, I’m deeply passionate about cloud engineering and web development. 
           I thrive on exploring cutting-edge technologies and see challenges as opportunities to grow and learn. I’m also eager to dive 
           into new innovations, with a particular interest in automation.
@@ -59,16 +72,35 @@ const Home = () => {
             Hire Me
           </Link>
 
-          <div className="flex gap-4 text-gray-700">
+          <div className="flex gap-4 text-gray-700"
+            style={{
+              color: '#374151' // Fallback for text-gray-700
+            }}
+          >
 
-            <Link to="https://www.github.com/Kheav-Kienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
-              <FaGithub />
+            <Link 
+              to="https://www.github.com/Kheav-Kienghok" 
+              target="_blank" 
+              className="text-2xl sm:text-3xl text-gray-800 hover:text-gray-500 transition"
+              style={{ color: '#374151' }} // Fallback for text-gray-800
+            >
+              <FaGithub size={27} className="text-gray-800" />
             </Link>
-            <Link to="https://www.linkedin.com/in/kienghok-kheav-1896b5289" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
-              <FaLinkedin />
+            <Link 
+              to="https://www.linkedin.com/in/kienghok-kheav-1896b5289" 
+              target="_blank" 
+              className="text-2xl sm:text-3xl text-blue-700 hover:text-blue-500 transition"
+              syle={{ color: '#3b82f6' }} // Fallback for text-blue-700
+            >
+              <FaLinkedin size={27} className="text-blue-700" />
             </Link>
-            <Link to="https://www.youtube.com/@KheavKienghok" target="_blank" className="text-2xl sm:text-3xl hover:text-blue-500 transition">
-              <FaYoutube />
+            <Link 
+              to="https://www.youtube.com/@KheavKienghok" 
+              target="_blank" 
+              className="text-2xl sm:text-3xl text-red-600 hover:text-blue-500 transition"
+              style={{ color: '#ef4444' }} // Fallback for text-red-600
+            >
+              <FaYoutube size={27} className="text-red-600" />
             </Link>
 
           </div>
@@ -76,7 +108,11 @@ const Home = () => {
       </div>
 
       {/* Profile Image (Moves to Top on Small Screens) */}
-      <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[375px] lg:h-[375px] mx-auto rounded-full shadow-lg flex items-center justify-center overflow-hidden border-4 border-blue-400 hover:border-blue-500 transition">
+      <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[375px] lg:h-[375px] mx-auto rounded-full shadow-lg flex items-center justify-center overflow-hidden border-4 border-blue-400 hover:border-blue-500 transition"
+        style={{
+          borderColor: '#3b82f6', // Fallback for border-blue-400
+        }}
+      >
         <img
           src={myPhoto}
           alt="Kienghok"

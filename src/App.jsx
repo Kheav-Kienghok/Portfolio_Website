@@ -4,6 +4,7 @@ import NavBar from "./pages/NavBar";
 import Home from "./pages/Home";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact"
 
 function App() {
   
@@ -23,6 +24,10 @@ function App() {
 
       <div id="projects">
         <Projects />
+      </div>
+
+      <div id="contact">
+        <Contact />
       </div>
 
     </BrowserRouter>
