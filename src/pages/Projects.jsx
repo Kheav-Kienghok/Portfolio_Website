@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode } from 'react-icons/fa';
 
 const projects = [
@@ -45,11 +46,22 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="font-[Lato-Thin] py-10">
+    <div className="font-[Lato-Thin] py-10 mb-20">
       <div className="container mx-auto px-10 lg:px-40">
 
-        <h2 className="font-funnel text-3xl lg:text-4xl font-extrabold text-center text-blue-600 mb-6">Projects That Define Me</h2>
-        <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-10">
+        <h2 className="font-funnel text-3xl lg:text-4xl font-extrabold text-center text-blue-600 mb-6"
+          style={{
+            color: '#2563EB', // Equivalent to Tailwind's text-blue-600
+          }}
+        >
+          Projects That Define Me
+        </h2>
+
+        <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-10"
+          style={{
+            color: '#616161', // Equivalent to Tailwind's text-gray-700
+          }}
+        >
           A collection of projects where I turn ideas into reality. From AI to web development, each one reflects my passion for building efficient and impactful solutions.
         </p>
 
@@ -60,19 +72,47 @@ const Projects = () => {
             <div 
               key={project.id} 
               className="relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.3)', // fallback for bg-white + bg-opacity-30
+                border: '1px solid rgba(255, 255, 255, 0.2)', // fallback for border-white/20
+                backdropFilter: 'blur(10px)',                // fallback for backdrop-blur-lg
+                WebkitBackdropFilter: 'blur(10px)',          // Safari fallback
+              }}
             >
+
               <div className="absolute inset-0 w-full h-full border-4 border-transparent rounded-2xl animate-border-run"></div>
               <div className="mb-4 z-10">{project.icon}</div>
-              <h3 className="text-2xl font-semibold text-gray-800 z-10">{project.title}</h3>
-              <p className="text-gray-600 mt-3 z-10">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
+
+              <h3 className="text-2xl font-semibold text-gray-800 z-10"
+                style={{
+                  color: '#1F2937', // Equivalent to Tailwind's text-gray-800
+                }}
+              >
+                {project.title}
+              </h3>
+
+              <p className="text-gray-600 mt-3 z-10"
+                style={{
+                  color: '#4B5563', // Equivalent to Tailwind's text-gray-600
+                }}
+              >
+                {project.description}
+              </p>
+
+              <Link
+                to={project.link}
+                target='_blank'
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors font-semibold bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md hover:bg-white/30 z-10"
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                }}
               >
                 <FaGithub className="text-2xl" /> View on GitHub
-              </a>
+              </Link>
+
             </div>
           ))}
         </div>

@@ -5,7 +5,13 @@ const AWS_Achievement = () => {
 
   return (
 
-    <div className="font-[Lato-Thin] border-2 border-gray-300 rounded-lg p-4 mt-8 mb-15">
+    <div className="font-[Lato-Thin] border-2 border-gray-300 rounded-lg p-4 mt-8 mb-15"
+      style={{
+        borderWidth: '2px', // Fallback for border-2
+        borderColor: '#d1d5db', // Fallback for border-gray-300
+        borderRadius: '0.5rem' // Fallback for rounded-lg
+      }}
+    >
       <h3 className="font-funnel text-xl font-semibold text-gray-800 mb-4"
         style={{ 
           color: '#1f2937', // Equivalent to Tailwind's text-gray-800
@@ -47,7 +53,11 @@ const AWS_Achievement = () => {
             to={badge.link} 
             target="_blank" 
             className="p-2 border-2 border-gray-300 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-xl hover:border-blue-500"
-            style={{ borderColor: '#d1d5db' }} // Fallback for border-gray-300
+            style={{
+              borderWidth: '2px', // Fallback for border-2
+              borderColor: '#d1d5db', // Fallback for border-gray-300
+              borderRadius: '0.5rem' // Fallback for rounded-lg
+            }}
           >
             <img
               src={badge.imgSrc}

@@ -8,13 +8,14 @@ const NavBar = () => {
 
   // Update offset dynamically based on screen size
   useEffect(() => {
-    const updateOffset = () => {
-      setOffset(window.innerWidth >= 1024 ? -80 : -50);
-    };
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+  
+    const handleChange = (e) => setOffset(e.matches ? -80 : -50);
     
-    updateOffset();
-    window.addEventListener("resize", updateOffset);
-    return () => window.removeEventListener("resize", updateOffset);
+    handleChange(mediaQuery); // Set initially
+    mediaQuery.addEventListener('change', handleChange);
+  
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const handleNav = () => setNav(!nav);

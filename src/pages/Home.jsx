@@ -90,7 +90,7 @@ const Home = () => {
               to="https://www.linkedin.com/in/kienghok-kheav-1896b5289" 
               target="_blank" 
               className="text-2xl sm:text-3xl text-blue-700 hover:text-blue-500 transition"
-              syle={{ color: '#3b82f6' }} // Fallback for text-blue-700
+              style={{ color: '#3b82f6' }} // Fallback for text-blue-700
             >
               <FaLinkedin size={27} className="text-blue-700" />
             </Link>
@@ -110,7 +110,9 @@ const Home = () => {
       {/* Profile Image (Moves to Top on Small Screens) */}
       <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[375px] lg:h-[375px] mx-auto rounded-full shadow-lg flex items-center justify-center overflow-hidden border-4 border-blue-400 hover:border-blue-500 transition"
         style={{
-          borderColor: '#3b82f6', // Fallback for border-blue-400
+          borderWidth: '4px',               // Fallback for 'border-4'
+          borderColor: '#60a5fa',           // Fallback for 'border-blue-400'
+          transition: 'border-color 0.3s ease', // Fallback for 'transition' on hover
         }}
       >
         <img
