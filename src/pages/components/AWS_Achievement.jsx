@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 const AWS_Achievement = () => {
 
   return (
-
     <div className="font-[Lato-Thin] border-2 border-gray-300 rounded-lg p-4 mt-8 mb-15"
       style={{
-        borderWidth: '2px', // Fallback for border-2
-        borderColor: '#d1d5db', // Fallback for border-gray-300
-        borderRadius: '0.5rem' // Fallback for rounded-lg
+        borderWidth: '2px',                 // Fallback for border-2
+        borderColor: '#d1d5db',             // Fallback for border-gray-300
+        borderStyle: 'solid',               // ✅ Required to render the border color
+        borderRadius: '0.5rem',             // Fallback for rounded-lg (8px)
+        WebkitBorderRadius: '0.5rem',       // Fallback for older iOS Safari
+        padding: '1rem',                    // Fallback for p-4 (16px)
+        WebkitPadding: '1rem'              // Fallback for iOS 9 and below (rare, but safe)
       }}
     >
       <h3 className="font-funnel text-xl font-semibold text-gray-800 mb-4"
@@ -56,7 +59,9 @@ const AWS_Achievement = () => {
             style={{
               borderWidth: '2px', // Fallback for border-2
               borderColor: '#d1d5db', // Fallback for border-gray-300
-              borderRadius: '0.5rem' // Fallback for rounded-lg
+              borderRadius: '0.5rem', // Fallback for rounded-lg
+              boxShadow: '0 2px 5px rgba(0, 0, 0, 0.15)', // Fallback for shadow-lg
+              transition: 'all 0.3s ease-in-out', // Fallback for transition-all
             }}
           >
             <img

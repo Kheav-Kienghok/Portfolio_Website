@@ -155,9 +155,13 @@ const Skills = () => {
 
       <div className="border-2 border-gray-300 rounded-lg p-4 mt-8"
         style={{
-          borderWidth: '2px', // Fallback for border-2
-          borderColor: '#d1d5db', // Fallback for border-gray-300
-          borderRadius: '0.5rem' // Fallback for rounded-lg
+          borderWidth: '2px',                 // Fallback for border-2
+          borderColor: '#d1d5db',             // Fallback for border-gray-300
+          borderStyle: 'solid',               // ✅ Required to render the border color
+          borderRadius: '0.5rem',             // Fallback for rounded-lg (8px)
+          WebkitBorderRadius: '0.5rem',       // Fallback for older iOS Safari
+          padding: '1rem',                    // Fallback for p-4 (16px)
+          WebkitPadding: '1rem'              // Fallback for iOS 9 and below (rare, but safe)
         }}
       >
         <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4"
@@ -187,9 +191,13 @@ const Skills = () => {
           ].map((tool, i) => (
             <div key={i} className="flex flex-col items-center group p-2 lg:p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg"
               style={{
-                color: '#1f2937',                    // fallback for text-gray-800
-                WebkitFontSmoothing: 'antialiased', // improves rendering on iOS
-                MozOsxFontSmoothing: 'grayscale',   // improves rendering on macOS
+                borderWidth: '2px',                 // Fallback for border-2
+                borderColor: '#d1d5db',             // Fallback for border-gray-300
+                borderStyle: 'solid',               // ✅ Required to render the border color
+                borderRadius: '0.5rem',             // Fallback for rounded-lg (8px)
+                WebkitBorderRadius: '0.5rem',       // Fallback for older iOS Safari
+                padding: '1rem',                    // Fallback for p-4 (16px)
+                WebkitPadding: '1rem'              // Fallback for iOS 9 and below (rare, but safe)
               }}
             >
               <div className="icon-wrapper p-2 rounded-lg border-2 border-transparent transition-all duration-300">
