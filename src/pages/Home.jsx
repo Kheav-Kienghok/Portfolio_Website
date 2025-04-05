@@ -108,17 +108,27 @@ const Home = () => {
       </div>
 
       {/* Profile Image (Moves to Top on Small Screens) */}
+
       <div className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[375px] lg:h-[375px] mx-auto rounded-full shadow-lg flex items-center justify-center overflow-hidden border-4 border-blue-400 hover:border-blue-500 transition"
         style={{
-          borderWidth: '4px',               // Fallback for 'border-4'
-          borderColor: '#60a5fa',           // Fallback for 'border-blue-400'
-          transition: 'border-color 0.3s ease', // Fallback for 'transition' on hover
+          borderWidth: '4px',
+          borderColor: '#60a5fa',
+          borderStyle: 'solid', 
+          transition: 'border-color 0.3s ease',
+          WebkitBorderRadius: '9999px', // Fallback for older iOS border-radius
+          WebkitTransition: 'border-color 0.3s ease', // Fallback for transition
+          WebkitBoxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)', // Fallback for shadow
         }}
       >
         <img
           src={myPhoto}
           alt="Kienghok"
           className="w-full h-full object-cover rounded-full"
+          style={{
+            objectFit: 'cover', // Fallback for object-cover
+            borderRadius: '9999px', // Ensures round image
+            WebkitBorderRadius: '9999px', // For iOS 9 and earlier
+          }}
         />
       </div>
 

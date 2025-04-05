@@ -113,12 +113,26 @@ const Skills = () => {
         ].map((section, index) => (
           <div key={index} className="border-2 border-gray-300 rounded-lg p-4"
             style={{
-              borderWidth: '2px', // Fallback for border-2
-              borderColor: '#d1d5db', // Fallback for border-gray-300
-              borderRadius: '0.5rem' // Fallback for rounded-lg
+              borderWidth: '2px',                 // Fallback for border-2
+              borderColor: '#d1d5db',             // Fallback for border-gray-300
+              borderStyle: 'solid',               // ✅ Required to render the border color
+              borderRadius: '0.5rem',             // Fallback for rounded-lg (8px)
+              WebkitBorderRadius: '0.5rem',       // Fallback for older iOS Safari
+              padding: '1rem',                    // Fallback for p-4 (16px)
+              WebkitPadding: '1rem'              // Fallback for iOS 9 and below (rare, but safe)
             }}
           >
-            <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4">{section.category}</h3>
+            <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4"
+              style={{
+                fontWeight: 600,               // Fallback for font-semibold
+                color: '#1f2937',              // Fallback for text-gray-800
+                WebkitFontSmoothing: 'antialiased', // Improves text rendering on older iOS
+                MozOsxFontSmoothing: 'grayscale',   // Bonus: improves macOS rendering too
+              }}
+            >
+              {section.category}
+            </h3>
+
             <div className="grid grid-cols-2 gap-4">
               {section.skills.map((skill, i) => (
                 <div key={i} className="flex flex-col items-center group p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-4"
@@ -146,7 +160,16 @@ const Skills = () => {
           borderRadius: '0.5rem' // Fallback for rounded-lg
         }}
       >
-        <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4">Version Control & Tools</h3>
+        <h3 className="font-funnel underline text-xl font-semibold text-gray-800 mb-4"
+          style={{
+            fontWeight: 600,               // Fallback for font-semibold
+            color: '#1f2937',              // Fallback for text-gray-800
+            WebkitFontSmoothing: 'antialiased', // Improves text rendering on older iOS
+            MozOsxFontSmoothing: 'grayscale',   // Bonus: improves macOS rendering too
+          }}
+        >
+          Version Control & Tools
+        </h3>
         <div className="flex justify-center gap-8 flex-wrap">
         {[
           { 
@@ -162,7 +185,13 @@ const Skills = () => {
             icon: <VscVscode size={50} className="text-blue-500" style={{ color: '#3b82f6' }} /> 
           }
           ].map((tool, i) => (
-            <div key={i} className="flex flex-col items-center group p-2 lg:p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <div key={i} className="flex flex-col items-center group p-2 lg:p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              style={{
+                color: '#1f2937',                    // fallback for text-gray-800
+                WebkitFontSmoothing: 'antialiased', // improves rendering on iOS
+                MozOsxFontSmoothing: 'grayscale',   // improves rendering on macOS
+              }}
+            >
               <div className="icon-wrapper p-2 rounded-lg border-2 border-transparent transition-all duration-300">
                 {tool.icon}
               </div>
