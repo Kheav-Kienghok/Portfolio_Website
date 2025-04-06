@@ -13,7 +13,7 @@ const projects = [
     ),
     description: 'A banking application that helps manage accounts, transactions, and security features like encryption. I built this using Python and SQLite, ensuring it is secure and reliable for managing sensitive data.',
     link: 'https://github.com/Kheav-Kienghok/Bank-System-Application',
-    icon: <FaUniversity className="text-5xl text-blue-500" />, 
+    icon: <FaUniversity className="text-5xl text-blue-500" style={{ color: '#3b82f6' }} />, // Fallback color blue-500
   },
   {
     id: 2,
@@ -25,31 +25,32 @@ const projects = [
     ),
     description: 'An automated attendance system using face recognition to track attendance accurately. This project uses AI and computer vision to simplify attendance management, ensuring it is fast and secure.',
     link: 'https://github.com/Kheav-Kienghok/Face_Recognition_Attendant',
-    icon: <FaCamera className="text-5xl text-green-500" />, 
+    icon: <FaCamera className="text-5xl text-green-500" style={{ color: '#10b981' }} />, // Fallback color green-500
   },
   {
     id: 3,
     title: 'Course Analyzer',
     description: 'A tool for schools to optimize student course enrollment by analyzing records and recommending the best courses based on student needs. It helps prevent class overbooking and improves resource allocation and time management.',
     link: 'https://github.com/Kheav-Kienghok/Course_Analyzer',
-    icon: <FaCode className="text-5xl text-yellow-500" />, 
+    icon: <FaCode className="text-5xl text-yellow-500" style={{ color: '#f59e0b' }} />, // Fallback color yellow-500
   },
   {
     id: 4,
     title: 'Portfolio Website',
     description: 'My personal website that showcases my skills, projects, and experience as a developer. I built this using modern web tools, creating a clean and interactive layout to highlight my work.',
     link: 'https://github.com/Kheav-Kienghok/Portfolio_Website',
-    icon: <FaLaptopCode className="text-5xl text-purple-500" />, 
+    icon: <FaLaptopCode className="text-5xl text-purple-500" style={{ color: '#8b5cf6' }} />, // Fallback color purple-500
   },
 ];
 
 
 const Projects = () => {
   return (
+
     <div className="font-[Lato-Thin] py-10 mb-20">
       <div className="container mx-auto px-10 lg:px-40">
 
-        <h2 className="font-funnel text-3xl lg:text-4xl font-extrabold text-center text-blue-600 mb-6"
+        <h2 className="font-funnel text-[30px] lg:text-4xl font-bold text-center text-blue-600 mb-6"
           style={{
             color: '#2563EB', // Equivalent to Tailwind's text-blue-600
           }}
@@ -73,11 +74,11 @@ const Projects = () => {
               key={project.id} 
               className="relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.3)', // fallback for bg-white + bg-opacity-30
-                border: '1px solid rgba(255, 255, 255, 0.2)', // fallback for border-white/20
-                backdropFilter: 'blur(10px)',                // fallback for backdrop-blur-lg
-                WebkitBackdropFilter: 'blur(10px)',          // Safari fallback
-              }}
+                backgroundColor: 'rgba(255, 255, 255, 0.3)',  // Fallback for bg-white + bg-opacity-30
+                backdropFilter: 'blur(10px)',  // Fallback for backdrop-blur-lg
+                WebkitBackdropFilter: 'blur(10px)',  // Safari fallback
+                border: '1px solid rgba(255, 255, 255, 0.2)',  // Fallback for border-white/20
+              }}            
             >
 
               <div className="absolute inset-0 w-full h-full border-4 border-transparent rounded-2xl animate-border-run"></div>
@@ -109,8 +110,8 @@ const Projects = () => {
                   backdropFilter: 'blur(8px)',
                   WebkitBackdropFilter: 'blur(8px)',
                 }}
-              >
-                <FaGithub className="text-2xl" /> View on GitHub
+              > 
+                <FaGithub className="text-2xl text-gray-800" style={{ color: '#1f2937' }} /> View on GitHub
               </Link>
 
             </div>

@@ -44,7 +44,7 @@ const Contact = () => {
           >
             Hello
           </span>? I'd love to chat! <br />
-          <span className="text-base bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 font-extrabold"
+          <span className="text-base lg:text-[18px] bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 font-extrabold"
             style={{
               color: '#4F46E5', // Equivalent to Tailwind's text-indigo-500
             }}

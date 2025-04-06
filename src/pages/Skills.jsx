@@ -8,7 +8,7 @@ const Skills = () => {
   return (
     <div className="font-[Lato-Thin] max-w-5xl mx-auto py-10 px-4 text-center">
       
-      <h2 className="font-funnel text-4xl font-extrabold text-blue-600 lg:mb-8 md:mb-5"
+      <h2 className="font-funnel text-4xl font-bold text-blue-600 lg:mb-8 md:mb-5"
         style={{
           color: '#2563EB' // Equivalent to Tailwind's text-blue-600
         }}

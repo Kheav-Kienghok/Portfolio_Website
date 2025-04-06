@@ -29,7 +29,7 @@ const NavBar = () => {
 
   return (
     <section>
-      <nav className="backdrop-blur-md bg-transparent z-50 fixed top-0 left-0 w-full m-auto font-[Inter] text-black flex justify-end items-center h-13 lg:h-27 sm:20">
+      <nav className="backdrop-blur-md bg-transparent z-50 fixed top-0 left-0 w-full m-auto font-[Inter] text-black flex justify-end items-center h-15 lg:h-27 sm:20">
 
         {/* Desktop Navigation */}
         <ul className="md:flex mr-[30px] text-lg font-semibold gap-2 lg:gap-10 md:gap-5 justify-end cursor-pointer lg:mr-[100px] hidden">
@@ -62,7 +62,7 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`absolute top-16 left-0 w-full bg-white shadow-md transition-all duration-300 ${
+          className={`absolute top-15 left-0 w-full bg-white shadow-md transition-all duration-300 ${
             nav ? "block" : "hidden"
           } md:hidden`}
         >
