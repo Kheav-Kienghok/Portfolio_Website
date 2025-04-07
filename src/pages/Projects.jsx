@@ -50,7 +50,7 @@ const Projects = () => {
     <div className="font-[Lato-Thin] py-10 mb-20">
       <div className="container mx-auto px-10 lg:px-40">
 
-        <h2 className="font-funnel text-[30px] lg:text-4xl font-bold text-center text-blue-600 mb-6"
+        <h2 className="font-funnel text-[29px] lg:text-4xl font-bold text-center text-blue-600 mb-6"
           style={{
             color: '#2563EB', // Equivalent to Tailwind's text-blue-600
           }}
@@ -81,7 +81,8 @@ const Projects = () => {
               }}            
             >
 
-              <div className="absolute inset-0 w-full h-full border-4 border-transparent rounded-2xl animate-border-run"></div>
+              <div className="project-border-animated"></div>
+
               <div className="mb-4 z-10">{project.icon}</div>
 
               <h3 className="text-2xl font-semibold text-gray-800 z-10"
@@ -121,15 +122,36 @@ const Projects = () => {
       
       <style>
         {`
-          @keyframes border-run {
-            0% { border-color: red; }
-            25% { border-color: blue; }
-            50% { border-color: green; }
-            75% { border-color: yellow; }
-            100% { border-color: red; }
+          .project-border-animated::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 4px;
+            border-radius: 1rem;
+            background: linear-gradient(270deg, #f87171, #60a5fa, #34d399, #facc15, #f87171);
+            background-size: 400% 400%;
+            animation: gradient-border 6s ease infinite;
+            z-index: 0;
+
+            /* Creates a border effect using masking */
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
           }
-          .animate-border-run {
-            animation: border-run 5s infinite linear;
+
+          @keyframes gradient-border {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+
+          /* Fallback for old browsers */
+          @supports not (backdrop-filter: blur(10px)) {
+            .project-border-animated::before {
+              background: none;
+              border: 2px solid #60a5fa;
+              animation: none;
+            }
           }
         `}
       </style>

@@ -135,11 +135,13 @@ const Skills = () => {
 
             <div className="grid grid-cols-2 gap-4">
               {section.skills.map((skill, i) => (
-                <div key={i} className="flex flex-col items-center group p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-4"
+                <div key={i}  className="flex flex-col items-center group p-4 rounded-lg border-2 border-gray-300 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-4"                   
                   style={{
-                    borderWidth: '2px', // Fallback for border-2
-                    borderColor: '#d1d5db', // Fallback for border-gray-300
-                    borderRadius: '0.5rem' // Fallback for rounded-lg
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    border: "2px solid #D1D5DB", // gray-300
+                    boxShadow: "0 1px 2px rgba(0, 0, 0, 0.05)", // subtle fallback shadow
                   }}
                 >
                   <div className={`icon-wrapper p-2 rounded-lg border-2 border-transparent transition-all duration-300 group-hover:${skill.border}`}>
@@ -196,7 +198,6 @@ const Skills = () => {
                 borderStyle: 'solid',               // ✅ Required to render the border color
                 borderRadius: '0.5rem',             // Fallback for rounded-lg (8px)
                 WebkitBorderRadius: '0.5rem',       // Fallback for older iOS Safari
-                padding: '1rem',                    // Fallback for p-4 (16px)
                 WebkitPadding: '1rem'              // Fallback for iOS 9 and below (rare, but safe)
               }}
             >
