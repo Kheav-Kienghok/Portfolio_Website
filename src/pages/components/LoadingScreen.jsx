@@ -36,10 +36,19 @@ export default function LoadingScreen({ onFinish }) {
         color: "white",
       }}
     >
-      <p className="font-funnel mb-6 text-sm tracking-widest text-gray-400 animate-pulse"
-        style={{ color: "#9CA3AF" }}
+
+      <p
+        className="mb-6 text-[15px] lg:text-lg md:text-xl sm:text-sm tracking-[0.1em] lg:tracking[0.4em] mg:tracking[0.3em] font-mono text-cyan-300 animate-pulse"
+        style={{
+          textShadow: `
+            0 0 4px #00ffff,
+            0 0 8px #00ffff,
+            0 0 12px #00ffff,
+            0 0 20px #00ffff
+          `,
+        }}
       >
-        L O A D I N G . . .
+        L O A D I N G&nbsp;.&nbsp;.&nbsp;.
       </p>
 
       <div className="w-4/5 md:w-2/3 h-5 bg-[#222] rounded-full shadow-inner overflow-hidden relative"
@@ -53,18 +62,34 @@ export default function LoadingScreen({ onFinish }) {
             width: `${progress}%`,
           }}
         ></div>
-        <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-gray-400"
-          style={{ color: "#9CA3AF" }}
+        <span
+          className="font-extrabold absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs text-shadow-lg"
+          style={{
+            color: progress >= 53 ? "black" : "#9CA3AF",  // Change color when progress reaches 60%
+          }}
         >
           {progress}%
         </span>
+
       </div>
 
-      <p className="mt-6 text-xs text-gray-500 italic opacity-70"
-        style={{ color: "#6B7280" }}
-      >
-        Initial boot sequence...
-      </p>
+      <div className="space-y-5">
+        <p
+          className="text-center text-sm font-mono mt-5 leading-[22px] text-cyan-400 
+          animate-fadeIn tracking-wide transform transition-all duration-300 "
+          style={{
+            textShadow: '0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.7)',
+            letterSpacing: '0.1em',
+            animation: 'fadeIn 2s ease-in-out',
+          }}
+        >
+          Hang tight, <br />
+          we're fetching some data ... <br />
+          Grab a snack, <br />
+          this might take a sec. 😎
+        </p>
+      </div>
+
     </div>
   );
 }
