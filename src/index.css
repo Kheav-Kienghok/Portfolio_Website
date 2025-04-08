@@ -13,23 +13,3 @@
 .font-bebas {
     font-family: 'Bebas Neue', sans-serif;
 }
-
-@keyframes pulse50s {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.1);  /* Slightly grows the image */
-      opacity: 0.7;           /* Slightly fades the image */
-    }
-    100% {
-      transform: scale(1);   /* Returns to original size */
-      opacity: 1;             /* Fully opaque again */
-    }
-  }
-  
-  /* Custom animation with 50-second duration */
-  .animate-pulse-50s {
-    animation: pulse50s 50s infinite;
-  }

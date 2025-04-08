@@ -20,7 +20,7 @@ const AWS_Achievement = () => {
           color: '#1f2937', // Equivalent to Tailwind's text-gray-800
         }}
       >
-        AWS Certifications
+        AWS Academy Certifications
       </h3>
       <p className="text-gray-600 mb-7 text-lg"
         style={{

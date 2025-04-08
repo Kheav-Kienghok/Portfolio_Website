@@ -1,4 +1,3 @@
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { SiGmail } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -141,57 +140,36 @@ const Contact = () => {
         </form>
 
         <div className="flex justify-center gap-6 mt-10 text-gray-600 text-3xl relative z-10">
-          <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
-            <Link
-              to="#"
-              onClick={() => window.location.href = "mailto:kheavkienghok@gmail.com"}
-              className="text-2xl sm:text-3xl text-red-600 hover:text-red-400 transition"
-              style={{
-                color: '#dc2626', // Fallback for text-red-600
-              }}
-            >
-              <SiGmail size={30} className="text-red-600" />
-            </Link>
-          </motion.div>
+          <div className="hidden md:block lg:block">
+            <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
+              <Link
+                to="#"
+                onClick={() => window.location.href = "mailto:kheavkienghok@gmail.com"}
+                className="text-2xl text-red-600 hover:text-red-400 transition"
+                style={{
+                  color: '#dc2626', // Fallback for text-red-600
+                }}
+              >
+                <SiGmail size={30} className="text-red-600" />
+              </Link>
+            </motion.div>
+          </div>
 
-          <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
-            <Link
-              to="#"
-              onClick={() => window.open("https://t.me/anshishui", "_blank", "noopener,noreferrer")}
-              className="text-2xl sm:text-3xl text-blue-700 hover:text-blue-500 transition"
-              style={{
-                color: '#3b82f6', // Fallback for text-blue-700
-              }}
-            >
-              <LiaTelegramPlane size={30} className="text-blue-700" />
-            </Link>
-          </motion.div>
+          <div className="hidden md:block lg:block">
+            <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
+              <Link
+                to="#"
+                onClick={() => window.open("https://t.me/anshishui", "_blank", "noopener,noreferrer")}
+                className="text-2xl text-blue-700 hover:text-blue-500 transition"
+                style={{
+                  color: '#3b82f6', // Fallback for text-blue-700
+                }}
+              >
+                <LiaTelegramPlane size={30} className="text-blue-700" />
+              </Link>
+            </motion.div>
+          </div>
 
-          <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
-            <Link 
-              to="https://www.linkedin.com/in/kienghok-kheav-1896b5289" 
-              target="_blank" 
-              className="text-2xl sm:text-3xl text-blue-700 hover:text-blue-500 transition"
-              style={{
-                color: '#3b82f6', // Fallback for text-blue-700
-              }}
-            >
-              <FaLinkedin size={30} className="text-blue-700" />
-            </Link>
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
-            <Link 
-              to="https://www.github.com/Kheav-Kienghok" 
-              target="_blank" 
-              className="text-2xl sm:text-3xl text-gray-800 hover:text-gray-500 transition"
-              style={{
-                color: '#374151', // Fallback for text-gray-800
-              }}
-            >
-              <FaGithub size={30} className="text-gray-800" />
-            </Link>
-          </motion.div>
         </div>
       </div>
     </div>

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineHome } from "react-icons/ai";
-import { FaRegLightbulb, FaProjectDiagram, FaEnvelope } from "react-icons/fa"; // Import icons
-import myPhoto from "../assets/portfolio.jpg";
+import { FaRegLightbulb, FaProjectDiagram, FaEnvelope, FaTelegram, FaFacebook   } from "react-icons/fa"; 
+import { SiGmail } from "react-icons/si";
+import { motion } from "framer-motion";
+import { IoPhonePortraitOutline } from "react-icons/io5";
+import myPhoto from "../assets/my_picture.png";
 import { Link as ScrollLink } from "react-scroll";
 import Background from "./components/BackgroundContainer";
+import { Link } from 'react-router-dom';
+
 
 
 const NavBar = () => {
@@ -21,6 +26,14 @@ const NavBar = () => {
   
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
+
+  useEffect(() => {
+    if (nav) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [nav]);
 
   const handleNav = () => setNav(!nav);
 
@@ -69,25 +82,44 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-14 right-0 h-[calc(100vh-60px)] w-75 rounded-full text-black z-50 transform transition-transform duration-300 md:hidden shadow-xl ${nav ? "block" : "hidden"}`}
+          className={`font-[Lato-Thin] fixed top-14 right-0 h-[calc(100vh-60px)] w-75 rounded-full text-black z-50 transform transition-transform duration-300 md:hidden shadow-xl ${nav ? "block" : "hidden"}`}
         >
 
           <Background />
-          <div className="flex flex-col h-full p-6">
+          <div className="flex flex-col h-full p-4">
             {/* User Info */}
-            <div className="flex flex-col items-center gap-3 mb-6">
-              <div className="relative w-35 h-35">
+            <div className="flex flex-col items-center gap-3 mb-2">
+              {/* Container that hides overflow */}
+              <div className="relative w-32 h-32 rounded-full overflow-hidden">
+                {/* Profile Photo */}
                 <img
                   src={myPhoto}
                   alt="Kienghok"
-                  className="w-35 h-35 rounded-full animate-pulse-2s"
+                  className="w-full h-full object-cover rounded-full scale-135 animate-pulse duration-[15000ms] ease-in-out transform transition-transform"
                 />
-                <div className="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin"></div> {/* Animation ring */}
-              </div>
-              <span className="font-bold text-[18px] italic">Kheav Kienghok</span>
-            </div>
 
-            
+                {/* Animated Ring (positioned absolutely) */}
+                <div className="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin"
+                  style={{
+                    borderColor: "rgba(0, 132, 255, 0.5) transparent rgba(0, 132, 255, 0.5) transparent",
+                    borderWidth: "4px",
+                    borderRadius: "50%",
+                  }}
+                ></div>
+              </div>
+
+              {/* Name */}
+              <span className="font-bebas text-[30px] italic">Kheav Kienghok</span>
+
+            </div>
+          
+            {/* Divider Line */}
+            <div className="w-full h-[3px] bg-gray-300 mb-2"
+              style={{
+                backgroundColor: "#D1D5DB", // Fallback for bg-gray-300
+              }}
+            ></div>
+
 
             {/* Sidebar Nav */}
             <ul className="flex flex-col gap-4">
@@ -99,21 +131,102 @@ const NavBar = () => {
                     offset={offset}
                     duration={500}
                     onClick={toggleSidebar}  // Close the menu when clicked
-                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 cursor-pointer"
+                    className="flex items-center gap-3 px-3 py-[7px] rounded-lg hover:bg-white/10 cursor-pointer"
                   >
-                    {icon && <span className="text-xl">{icon}</span>}
+                    {icon && <span className="text-2xl">{icon}</span>}
                     <span>{label}</span>
                   </ScrollLink>
+                  <div className="w-full h-[1px] bg-gray-300 mt-1"
+                    style={{
+                      backgroundColor: "#D1D5DB", // Fallback for bg-gray-300
+                    }}
+                  ></div>
                 </li>
+                
               ))}
             </ul>
 
             {/* Contact Info (for Contact Section) */}
-            <div className="mt-6 border-t border-white/20 pt-4 text-sm text-black">
-              <p>Get in touch:</p>
-              <p>kheavkienghok@gmail.com</p>
-              <p>+855 17 646 791</p>
+            <div className="font-funnel text-[17px] mt-4 border-t border-white/20 pt-3 text-black flex flex-col items-center">
+              <p className="text-2xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 hover:from-purple-600 hover:to-blue-500 transition-all duration-300 ease-in-out"
+                style={{
+                  backgroundImage: "linear-gradient(to right, #3B82F6, #9333EA)", // Fallback for gradient
+                  WebkitBackgroundClip: "text", // Ensures text clipping for gradient
+                  color: "transparent", // Fallback for text transparency
+                }}
+              >
+                Get in Touch
+              </p>
+      
+              <div className="w-full max-w-md bg-transparent text-black p-2 rounded-2xl shadow-lg border border-white/20">
+
+                <div className="flex flex-col space-y-3 w-full max-w-xs ml-2">
+
+                  <div className="flex items-center gap-3">
+                    <SiGmail size={20} className="text-[#D14836]"  />
+                    <Link
+                      href="mailto:kheavkienghok@gmail.com"
+                      className="hover:underline text-gray-800 hover:text-[#D14836] transition duration-300"
+                    >
+                      kheavkienghok@gmail.com
+                    </Link>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <IoPhonePortraitOutline size={22} className="text-gray-700" />
+                    <Link
+                      href="tel:+85517646791"
+                      className="hover:underline text-gray-800 hover:text-gray-700 transition duration-300"
+                    >
+                      +855 17 646 791
+                    </Link>
+                  </div>
+                  
+                </div>
+
+              </div>
+
+              <div className="flex justify-center gap-5 text-gray-600 text-3xl relative z-10 pt-4">
+                {/* Telegram */}
+                <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    to="#"
+                    onClick={() => window.open("https://t.me/anshishui", "_blank", "noopener,noreferrer")}
+                    className="transition duration-300 hover:text-[#0088cc]"
+                  >
+                    <FaTelegram size={25} className="text-[#0088cc]" />
+                  </Link>
+                </motion.div>
+
+                {/* Facebook */}
+                <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    to="#"
+                    onClick={() => window.open("https://www.facebook.com/profile.php?id=100009161414858&mibextid=LQQJ4d", "_blank", "noopener,noreferrer")}
+                    className="transition duration-300 hover:text-[#1877F2]"
+                  >
+                    <FaFacebook size={25} className="text-[#1877F2]" />
+                  </Link>
+                </motion.div>
+
+                {/* Gmail */}
+                <motion.div whileHover={{ scale: 1.3 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    to="#"
+                    onClick={() => window.location.href = "mailto:kheavkienghok@gmail.com"}
+                    className="transition duration-300 hover:text-red-500"
+                  >
+                    <SiGmail size={25} className="text-red-600" 
+                      style={{
+                        color: "#D14836"
+                      }}
+                    />
+                  </Link>
+                </motion.div>
+              </div>
+
             </div>
+
           </div>
         </div>
 

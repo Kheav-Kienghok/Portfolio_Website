@@ -50,12 +50,12 @@ const Projects = () => {
     <div className="font-[Lato-Thin] py-10 mb-20">
       <div className="container mx-auto px-10 lg:px-40">
 
-        <h2 className="font-funnel text-[29px] lg:text-4xl font-bold text-center text-blue-600 mb-6"
+        <h2 className="font-funnel text-[31px] lg:text-4xl font-bold text-center text-blue-600 mb-6"
           style={{
             color: '#2563EB', // Equivalent to Tailwind's text-blue-600
           }}
         >
-          Projects That Define Me
+          Project Showcase
         </h2>
 
         <p className="text-lg text-center text-gray-700 max-w-2xl mx-auto mb-10"
