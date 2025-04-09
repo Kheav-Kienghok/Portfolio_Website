@@ -90,30 +90,47 @@ const NavBar = () => {
             {/* User Info */}
             <div className="flex flex-col items-center gap-3 mb-2">
               {/* Container that hides overflow */}
-              <div className="relative w-32 h-32 rounded-full overflow-hidden">
+              <div className="w-32 h-32 rounded-full overflow-hidden transition relative"
+                style={{
+                  width: "128px", 
+                  height: "128px",
+                  borderWidth: '4px',
+                  borderColor: '#60a5fa', // Fallback color
+                  borderStyle: 'solid',
+                  WebkitBorderRadius: '9999px', // Fallback for older iOS border-radius
+                  WebkitTransition: 'border-color 0.3s ease', // Fallback for transition
+                  WebkitBoxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)', // Fallback for shadow
+                }}
+              >
                 {/* Profile Photo */}
                 <img
                   src={myPhoto}
                   alt="Kienghok"
-                  className="w-full h-full object-cover rounded-full scale-115 animate-pulse duration-[1000ms] ease-in-out transform transition-transform"
+                  className="w-full h-full object-cover rounded-full scale-100 animate-pulse duration-[1000ms] ease-in-out transform transition-transform"
                   style={{
-                    WebkitTransform: "scale(1.25)", // Fallback for iOS
+                    objectFit: 'cover', // Fallback for object-cover
+                    borderRadius: '9999px', // Ensures round image
+                    WebkitBorderRadius: '9999px', // For iOS 9 and earlier
+                    transform: "scale(1)",
+                    WebkitTransform: "scale(1)",
                     willChange: "transform",
-                    WebkitAnimation: "pulseAnimation 15000ms infinite ease-in-out", // Fallback for iOS
-                    animation: "pulseAnimation 15000ms infinite ease-in-out", // Standard CSS for modern browsers
+                    animation: "pulseAnimation 15s infinite ease-in-out",
+                    WebkitAnimation: "pulseAnimation 15s infinite ease-in-out"
                   }}
                 />
 
                 {/* Animated Ring (positioned absolutely) */}
                 <div className="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin"
                   style={{
-                    border: "4px solid",
-                    borderColor: "rgba(0,132,255,0.5) transparent rgba(0,132,255,0.5) transparent",
+                    position: "absolute", 
+                    borderWidth: '4px',
+                    borderStyle: 'solid', 
                     borderRadius: "50%",
+                    borderColor: "rgba(0,132,255,0.5) transparent rgba(0,132,255,0.5) transparent",
+                    transition: 'border-color 0.3s ease',
                     animation: "spin 1s linear infinite",
-                    WebkitAnimation: "spin 1s linear infinite",
+                    WebkitAnimation: "spin 1s linear infinite"
                   }}
-          
                 ></div>
 
               </div>
@@ -122,6 +139,14 @@ const NavBar = () => {
               <span className="font-bebas text-[30px] italic">Kheav Kienghok</span>
 
             </div>
+            
+            <style>
+              {`
+                @keyframes spin {
+                  to { transform: rotate(360deg); }
+                }
+              `}
+            </style>
           
             {/* Divider Line */}
             <div className="w-full h-[3px] bg-gray-300 mb-2"
