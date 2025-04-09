@@ -89,6 +89,7 @@ const NavBar = () => {
           <div className="flex flex-col h-full p-4">
             {/* User Info */}
             <div className="flex flex-col items-center gap-3 mb-2">
+              
               {/* Container that hides overflow */}
               <div className="w-32 h-32 rounded-full overflow-hidden transition relative"
                 style={{
@@ -102,6 +103,7 @@ const NavBar = () => {
                 }}
               >
                 {/* Profile Photo */}
+
                 <img
                   src={myPhoto}
                   alt="Kienghok"
@@ -119,14 +121,15 @@ const NavBar = () => {
                 />
 
                 {/* Animated Ring (positioned absolutely) */}
-                <div className="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin"
+                <div 
+                  className="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin"
                   style={{
                     position: "absolute", 
                     borderWidth: '4px',
                     borderStyle: 'solid', 
                     borderRadius: "50%",
                     borderColor: "rgba(0,132,255,0.5) transparent rgba(0,132,255,0.5) transparent",
-                    transition: 'border-color 0.3s ease',
+                    // transition: 'border-color 0.3s ease',
                     animation: "spin 1s linear infinite",
                     WebkitAnimation: "spin 1s linear infinite"
                   }}
@@ -143,6 +146,8 @@ const NavBar = () => {
             <div
               className="w-full h-1 bg-gray-300 mb-2"
               style={{
+                height: "1px",
+                width: "100%",
                 backgroundColor: "#D1D5DB", // Fallback for bg-gray-300
               }}
             ></div>

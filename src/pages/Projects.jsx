@@ -67,21 +67,21 @@ const Projects = () => {
         </p>
 
 
-        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div 
+          className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        >
 
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
+              className=" project-border-animated relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.3)',  // Fallback for bg-white + bg-opacity-30
                 backdropFilter: 'blur(10px)',  // Fallback for backdrop-blur-lg
                 WebkitBackdropFilter: 'blur(10px)',  // Safari fallback
                 border: '1px solid rgba(255, 255, 255, 0.2)',  // Fallback for border-white/20
-              }}            
+              }}  
             >
-
-              <div className="project-border-animated"></div>
 
               <div className="mb-4 z-10">{project.icon}</div>
 
@@ -119,43 +119,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-      
-      <style>
-        {`
-          .project-border-animated::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 4px;
-            border-radius: 1rem;
-            background: linear-gradient(270deg, #f87171, #60a5fa, #34d399, #facc15, #f87171);
-            background-size: 400% 400%;
-            animation: gradient-border 6s ease infinite;
-            z-index: 0;
-
-            /* Creates a border effect using masking */
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: destination-out;
-            mask-composite: exclude;
-          }
-
-          @keyframes gradient-border {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-
-          /* Fallback for old browsers */
-          @supports not (backdrop-filter: blur(10px)) {
-            .project-border-animated::before {
-              background: none;
-              border: 2px solid #60a5fa;
-              animation: none;
-            }
-          }
-        `}
-      </style>
-
+ 
     </div>
   );
 };
