@@ -98,6 +98,7 @@ const NavBar = () => {
                   className="w-full h-full object-cover rounded-full scale-115 animate-pulse duration-[1000ms] ease-in-out transform transition-transform"
                   style={{
                     WebkitTransform: "scale(1.25)", // Fallback for iOS
+                    willChange: "transform",
                     WebkitAnimation: "pulseAnimation 15000ms infinite ease-in-out", // Fallback for iOS
                     animation: "pulseAnimation 15000ms infinite ease-in-out", // Standard CSS for modern browsers
                   }}
@@ -106,13 +107,15 @@ const NavBar = () => {
                 {/* Animated Ring (positioned absolutely) */}
                 <div className="absolute inset-0 border-4 border-blue-500 rounded-full animate-spin"
                   style={{
-                    borderColor: "rgba(0, 132, 255, 0.5) transparent rgba(0, 132, 255, 0.5) transparent",
-                    borderWidth: "4px",
-                    borderRadius: "50%", // Ensuring it is round
-                    animation: "spin 1s linear infinite", // Standard animation
-                    WebkitAnimation: "spin 1s linear infinite", // Fallback for older iOS versions
+                    border: "4px solid",
+                    borderColor: "rgba(0,132,255,0.5) transparent rgba(0,132,255,0.5) transparent",
+                    borderRadius: "50%",
+                    animation: "spin 1s linear infinite",
+                    WebkitAnimation: "spin 1s linear infinite",
                   }}
+          
                 ></div>
+
               </div>
 
               {/* Name */}
