@@ -94,7 +94,6 @@ const NavBar = () => {
                 style={{
                   width: "128px", 
                   height: "128px",
-                  borderWidth: '4px',
                   borderColor: '#60a5fa', // Fallback color
                   borderStyle: 'solid',
                   WebkitBorderRadius: '9999px', // Fallback for older iOS border-radius
@@ -139,22 +138,14 @@ const NavBar = () => {
               <span className="font-bebas text-[30px] italic">Kheav Kienghok</span>
 
             </div>
-            
-            <style>
-              {`
-                @keyframes spin {
-                  to { transform: rotate(360deg); }
-                }
-              `}
-            </style>
           
             {/* Divider Line */}
-            <div className="w-full h-[3px] bg-gray-300 mb-2"
+            <div
+              className="w-full h-1 bg-gray-300 mb-2"
               style={{
                 backgroundColor: "#D1D5DB", // Fallback for bg-gray-300
               }}
             ></div>
-
 
             {/* Sidebar Nav */}
             <ul className="flex flex-col gap-4">
@@ -193,7 +184,13 @@ const NavBar = () => {
                 Get in Touch
               </p>
       
-              <div className="w-full max-w-md bg-transparent text-black p-2 rounded-2xl shadow-lg border border-white/20">
+              <div className="w-full max-w-md bg-transparent text-black p-2 rounded-2xl shadow-lg border border-white/20"
+                style={{
+                  backgroundColor: 'transparent', // Fallback for bg-transparent
+                  borderColor: 'rgba(255, 255, 255, 0.2)', // Fallback for border-white/20
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Fallback for shadow-lg
+                }}
+              >
 
                 <div className="flex flex-col space-y-3 w-full max-w-xs ml-2">
 
