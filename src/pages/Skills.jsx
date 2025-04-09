@@ -23,7 +23,7 @@ const Skills = () => {
         Here are some of the technologies and tools I work with:
       </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-2 gap-8 text-lg">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-2 gap-4 lg:gap-8 text-lg">
         {[  
           { category: "Frontend", skills: [
             { 
@@ -111,14 +111,13 @@ const Skills = () => {
             }
           ]}
         ].map((section, index) => (
-          <div key={index} className="border-2 border-gray-300 rounded-lg p-4"
+          <div key={index} className="border-2 border-gray-300 rounded-lg p-[10px] lg:p-4"
             style={{
               borderWidth: '2px',                 // Fallback for border-2
               borderColor: '#d1d5db',             // Fallback for border-gray-300
               borderStyle: 'solid',               // ✅ Required to render the border color
               borderRadius: '0.5rem',             // Fallback for rounded-lg (8px)
               WebkitBorderRadius: '0.5rem',       // Fallback for older iOS Safari
-              padding: '1rem',                    // Fallback for p-4 (16px)
               WebkitPadding: '1rem'              // Fallback for iOS 9 and below (rare, but safe)
             }}
           >

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     
-    <div className="flex flex-col-reverse md:grid md:grid-cols-[2fr_1fr] lg:grid-cols-[1.5fr_0.9fr] items-center max-w-5xl mx-auto px-4 py-25 md:px-2 md:py-45 gap-10">
+    <div className="flex flex-col-reverse md:grid md:grid-cols-[2fr_1fr] lg:grid-cols-[1.5fr_0.9fr] items-center max-w-5xl mx-auto px-6 py-25 md:px-2 md:py-45 gap-10">
       
       {/* Left Content */}
       <div className="w-full text-center md:text-left md:mx-3 mt-[-15px] lg:mt-[-5px]">

@@ -95,7 +95,12 @@ const NavBar = () => {
                 <img
                   src={myPhoto}
                   alt="Kienghok"
-                  className="w-full h-full object-cover rounded-full scale-135 animate-pulse duration-[15000ms] ease-in-out transform transition-transform"
+                  className="w-full h-full object-cover rounded-full scale-115 animate-pulse duration-[1000ms] ease-in-out transform transition-transform"
+                  style={{
+                    WebkitTransform: "scale(1.25)", // Fallback for iOS
+                    WebkitAnimation: "pulseAnimation 15000ms infinite ease-in-out", // Fallback for iOS
+                    animation: "pulseAnimation 15000ms infinite ease-in-out", // Standard CSS for modern browsers
+                  }}
                 />
 
                 {/* Animated Ring (positioned absolutely) */}
@@ -103,7 +108,9 @@ const NavBar = () => {
                   style={{
                     borderColor: "rgba(0, 132, 255, 0.5) transparent rgba(0, 132, 255, 0.5) transparent",
                     borderWidth: "4px",
-                    borderRadius: "50%",
+                    borderRadius: "50%", // Ensuring it is round
+                    animation: "spin 1s linear infinite", // Standard animation
+                    WebkitAnimation: "spin 1s linear infinite", // Fallback for older iOS versions
                   }}
                 ></div>
               </div>

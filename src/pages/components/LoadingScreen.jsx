@@ -1,31 +1,39 @@
 import { useEffect, useState } from "react";
 
 export default function LoadingScreen({ onFinish }) {
+
+  const INCREMENT = 6;
+  const PAUSE_AT = 84;
+  const COMPLETE = 100;
+  const PAUSE_DURATION = 1000; // milliseconds
+
   const [progress, setProgress] = useState(0);
   const [paused, setPaused] = useState(false);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (paused) return;
 
       setProgress((prev) => {
-        const next = prev + 1;
+        let next = prev + INCREMENT;
 
-        // Pause at 90%
-        if (next === 90) {
+        if (prev + INCREMENT === PAUSE_AT) {
+          next += 1; // Add extra boost
           setPaused(true);
-          setTimeout(() => setPaused(false), 1000); // Pause for 1s
+          setTimeout(() => setPaused(false), PAUSE_DURATION);
         }
 
-        // Finish at 100%
-        if (next >= 100) {
+        if (next >= COMPLETE) {
           clearInterval(interval);
-          setTimeout(onFinish, 1000);
+          setTimeout(onFinish, 1200);
+          return COMPLETE;
         }
 
         return next;
       });
-    }, 60); // control speed here
+    }, 60);
+
     return () => clearInterval(interval);
   }, [paused, onFinish]);
 
