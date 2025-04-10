@@ -23,9 +23,9 @@ const Contact = () => {
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
-        'template_cvwer88', 
         form.current, 
         'oL__cNPlxm3R0sWya'
+        
       )
       .then(
         () => {
@@ -158,7 +158,7 @@ const Contact = () => {
             >
               {errorMsg}
             </p>)}
-            
+
         </form>
 
         <div className="flex justify-center gap-6 lg:mt-5 md:mt-5 text-gray-600 text-3xl relative z-10">
