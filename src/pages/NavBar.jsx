@@ -100,6 +100,7 @@ const NavBar = () => {
                   WebkitBorderRadius: '9999px', // Fallback for older iOS border-radius
                   WebkitTransition: 'border-color 0.3s ease', // Fallback for transition
                   WebkitBoxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)', // Fallback for shadow
+                  overflow: "hidden",
                 }}
               >
                 {/* Profile Photo */}
@@ -146,9 +147,10 @@ const NavBar = () => {
             <div
               className="w-full h-1 bg-gray-300 mb-2"
               style={{
-                height: "1px",
-                width: "100%",
-                backgroundColor: "#D1D5DB", // Fallback for bg-gray-300
+                width: '100%',
+                height: '3px', // h-1 = 0.25rem = 4px
+                backgroundColor: '#d1d5db', // Tailwind gray-300 fallback
+                marginBottom: '0.5rem' // mb-2 = 8px
               }}
             ></div>
 

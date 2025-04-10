@@ -100,29 +100,65 @@ const Contact = () => {
             type="text" name="user_name" placeholder="Your Name" required
             value={name} onChange={(e) => setName(e.target.value)}
             className="w-full p-4 rounded-md bg-gray-100 text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-400 shadow-sm"
+            style={{
+              backgroundColor: '#f3f4f6', // fallback for bg-gray-100
+              color: '#1f2937', // fallback for text-gray-800
+              borderRadius: '0.375rem', // rounded-md
+            }}
           />
           <input 
             type="email" name="user_email" placeholder="Your Email" required
             value={email} onChange={(e) => setEmail(e.target.value)}
             className="w-full p-4 rounded-md bg-gray-100 text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-400 shadow-sm"
+            style={{
+              backgroundColor: '#f3f4f6',
+              color: '#1f2937',
+              borderRadius: '0.375rem',
+            }}
           />
           <textarea 
             name="message" rows="5" placeholder="Your Message" required
             value={message} onChange={(e) => setMessage(e.target.value)}
             className="w-full p-4 rounded-md bg-white/50 backdrop-blur-md text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-500 shadow-md transition duration-300 hover:shadow-lg"
+            style={{
+              backgroundColor: 'rgba(255,255,255,0.85)', // fallback for bg-white/50
+              color: '#1f2937',
+              borderRadius: '0.375rem',
+              backdropFilter: 'blur(4px)', // will be ignored in older iOS, graceful
+              WebkitBackdropFilter: 'blur(4px)',
+            }}
           ></textarea>
 
           <motion.button 
             type="submit"
             className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition p-4 rounded-xl font-bold text-white text-lg shadow-lg hover:shadow-2xl focus:ring-4 focus:ring-purple-400"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #3b82f6, #8b5cf6)', // fallback for gradient
+              borderRadius: '0.75rem',
+              fontWeight: '700',
+              fontSize: '1.125rem',
+              color: '#ffffff',
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Send Message
           </motion.button>
 
-          {successMsg && <p className="text-green-600 text-center mt-1 lg:mt-4 font-medium">{successMsg}</p>}
-          {errorMsg && <p className="text-red-600 text-center mt-1 lg:mt-4 font-medium">{errorMsg}</p>}
+          {successMsg && (
+            <p className="text-green-600 text-center mt-1 lg:mt-4 font-medium"
+              style={{ color: '#16a34a' }}
+            >
+              {successMsg}
+            </p>)}
+
+          {errorMsg && (
+            <p className="text-red-600 text-center mt-1 lg:mt-4 font-medium"
+              style={{ color: '#dc2626' }}
+            >
+              {errorMsg}
+            </p>)}
+            
         </form>
 
         <div className="flex justify-center gap-6 lg:mt-5 md:mt-5 text-gray-600 text-3xl relative z-10">
@@ -149,6 +185,7 @@ const Contact = () => {
               </Link>
             </motion.div>
           </div>
+
         </div>
       </div>
     </div>

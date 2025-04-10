@@ -10,11 +10,11 @@ import Contact from "./pages/Contact"
 
 function App() {
 
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // if (isLoading) {
-  //   return <LoadingScreen onFinish={() => setIsLoading(false)} />;
-  // }
+  if (isLoading) {
+    return <LoadingScreen onFinish={() => setIsLoading(false)} />;
+  }
   
   return (
 
