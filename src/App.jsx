@@ -11,10 +11,6 @@ import Contact from "./pages/Contact"
 function App() {
 
   const [isLoading, setIsLoading] = useState(true);
-
-  if (isLoading) {
-    return <LoadingScreen onFinish={() => setIsLoading(false)} />;
-  }
   
   return (
 
@@ -37,6 +33,13 @@ function App() {
       <div id="contact">
         <Contact />
       </div>
+
+      {/* Loading Screen Overlay */}
+      {isLoading && (
+          <div className="fixed inset-0 z-50">
+            <LoadingScreen onFinish={() => setIsLoading(false)} />
+          </div>
+      )}
 
     </BrowserRouter>
 

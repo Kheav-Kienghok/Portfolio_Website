@@ -146,14 +146,14 @@ const Contact = () => {
           </motion.button>
 
           {successMsg && (
-            <p className="text-green-600 text-center mt-1 lg:mt-4 font-medium"
+            <p className="text-green-600 text-center mt-1 font-medium"
               style={{ color: '#16a34a' }}
             >
               {successMsg}
             </p>)}
 
           {errorMsg && (
-            <p className="text-red-600 text-center mt-1 lg:mt-4 font-medium"
+            <p className="text-red-600 text-center mt-1 font-medium"
               style={{ color: '#dc2626' }}
             >
               {errorMsg}

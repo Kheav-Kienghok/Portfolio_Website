@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPython, FaJs, FaAws, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, FaGit, FaGithub, FaJava } from "react-icons/fa";
-import { SiFastapi, SiMysql, SiSqlite, SiMongodb, SiTailwindcss } from "react-icons/si";
+import { SiFastapi, SiMysql, SiSqlite, SiMongodb, SiTailwindcss, SiKubernetes } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import AWS_Achievement from "./components/AWS_Achievement";
 
@@ -108,9 +108,15 @@ const Skills = () => {
               icon: <FaDocker size={50} className="text-blue-500" style={{ color: '#3b82f6' }} />, 
               border: "border-blue-500", 
               style: { border: '4px solid #3b82f6' } 
+            },
+            {
+              name: "Kubernetes",
+              icon: <SiKubernetes size={50} className="text-blue-600" style={{ color: '#2563eb' }} />,
+              border: "border-blue-600",
+              style: { border: '4px solid #2563eb' }
             }
           ]}
-        ].map((section, index) => (
+        ].slice().reverse().map((section, index) => (
           <div key={index} className="border-2 border-gray-300 rounded-lg p-[10px] lg:p-4"
             style={{
               borderWidth: '2px',                 // Fallback for border-2

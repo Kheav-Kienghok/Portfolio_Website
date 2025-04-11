@@ -10,7 +10,6 @@ import Background from "./components/BackgroundContainer";
 import { Link } from 'react-router-dom';
 
 
-
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [offset, setOffset] = useState(-80); // Default offset
@@ -52,7 +51,7 @@ const NavBar = () => {
       <nav className="backdrop-blur-md bg-transparent z-50 fixed top-0 left-0 w-full m-auto font-[Inter] text-black flex justify-end items-center h-16 lg:h-27 sm:20 px-15">
 
         {/* Desktop Navigation */}
-        <ul className="md:flex mr-[30px] text-lg font-semibold gap-2 lg:gap-10 md:gap-5 justify-end cursor-pointer hidden">
+        <ul className="md:flex mr-[30px] text-lg font-extrabold gap-2 lg:gap-10 md:gap-5 justify-end cursor-pointer hidden">
           {navLinks.map(({ id, label }) => (
             <li key={id} className="p-5 ">
               <ScrollLink
@@ -87,12 +86,15 @@ const NavBar = () => {
 
           <Background />
           <div className="flex flex-col h-full p-4">
+
             {/* User Info */}
             <div className="flex flex-col items-center gap-3 mb-2">
               
               {/* Container that hides overflow */}
               <div className="w-32 h-32 rounded-full overflow-hidden transition relative"
                 style={{
+                  WebkitMaskImage: 'radial-gradient(circle, white 100%, transparent 100%)',
+                  maskImage: 'radial-gradient(circle, white 100%, transparent 100%)',
                   width: "128px", 
                   height: "128px",
                   borderColor: '#60a5fa', // Fallback color
@@ -101,6 +103,7 @@ const NavBar = () => {
                   WebkitTransition: 'border-color 0.3s ease', // Fallback for transition
                   WebkitBoxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)', // Fallback for shadow
                   overflow: "hidden",
+                  position: "relative",
                 }}
               >
                 {/* Profile Photo */}
@@ -113,8 +116,6 @@ const NavBar = () => {
                     objectFit: 'cover', // Fallback for object-cover
                     borderRadius: '9999px', // Ensures round image
                     WebkitBorderRadius: '9999px', // For iOS 9 and earlier
-                    transform: "scale(1)",
-                    WebkitTransform: "scale(1)",
                     willChange: "transform",
                     animation: "pulseAnimation 15s infinite ease-in-out",
                     WebkitAnimation: "pulseAnimation 15s infinite ease-in-out"
@@ -130,7 +131,7 @@ const NavBar = () => {
                     borderStyle: 'solid', 
                     borderRadius: "50%",
                     borderColor: "rgba(0,132,255,0.5) transparent rgba(0,132,255,0.5) transparent",
-                    // transition: 'border-color 0.3s ease',
+                    transition: 'border-color 0.3s ease',
                     animation: "spin 1s linear infinite",
                     WebkitAnimation: "spin 1s linear infinite"
                   }}
@@ -145,12 +146,9 @@ const NavBar = () => {
           
             {/* Divider Line */}
             <div
-              className="w-full h-1 bg-gray-300 mb-2"
+              className="w-full h-[4px] bg-gray-300 mb-2"
               style={{
-                width: '100%',
-                height: '3px', // h-1 = 0.25rem = 4px
-                backgroundColor: '#d1d5db', // Tailwind gray-300 fallback
-                marginBottom: '0.5rem' // mb-2 = 8px
+                backgroundColor: "#D1D5DB", // Tailwind gray-300 fallback
               }}
             ></div>
 

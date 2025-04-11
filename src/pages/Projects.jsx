@@ -40,7 +40,7 @@ const projects = [
     description: 'My personal website that showcases my skills, projects, and experience as a developer. I built this using modern web tools, creating a clean and interactive layout to highlight my work.',
     link: 'https://github.com/Kheav-Kienghok/Portfolio_Website',
     icon: <FaLaptopCode className="text-5xl text-purple-500" style={{ color: '#8b5cf6' }} />, // Fallback color purple-500
-  },
+  }
 ];
 
 
