@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode } from 'react-icons/fa';
+import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode, FaUserLock } from 'react-icons/fa';
 
 const projects = [
   {
@@ -37,9 +37,16 @@ const projects = [
   {
     id: 4,
     title: 'Portfolio Website',
-    description: 'My personal website that showcases my skills, projects, and experience as a developer. I built this using modern web tools, creating a clean and interactive layout to highlight my work.',
+    description: 'A personal website showcasing my skills, projects, and experience as a developer. Built with React and Tailwind CSS, it highlights my work in a clean and interactive layout. The website is fully responsive and serves as a digital portfolio to present my projects to potential clients or employers.',
     link: 'https://github.com/Kheav-Kienghok/Portfolio_Website',
     icon: <FaLaptopCode className="text-5xl text-purple-500" style={{ color: '#8b5cf6' }} />, // Fallback color purple-500
+  },
+  {
+    id: 5,
+    title: 'AuthenticatePage',
+    description: 'A secure authentication application with login and registration features. Built with React and FastAPI, it focuses on form validation and password hashing. The app is containerized with Docker for easy deployment, providing a secure and scalable solution for web applications.',
+    link: 'https://github.com/Kheav-Kienghok/AuthenticatePage',
+    icon: <FaUserLock className="text-5xl text-blue-500" style={{ color: '#3b82f6' }} />, // Fallback color blue-500
   }
 ];
 
@@ -71,7 +78,7 @@ const Projects = () => {
           className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
 
-          {projects.map((project) => (
+          {projects.slice().reverse().map((project) => (
             <div 
               key={project.id} 
               className=" project-border-animated relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
@@ -100,6 +107,8 @@ const Projects = () => {
               >
                 {project.description}
               </p>
+
+              <div className="mt-1 flex-grow"></div> {/* Empty space to push the button to the bottom */}
 
               <Link
                 to={project.link}

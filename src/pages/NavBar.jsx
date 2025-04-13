@@ -131,7 +131,7 @@ const NavBar = () => {
                     borderStyle: 'solid', 
                     borderRadius: "50%",
                     borderColor: "rgba(0,132,255,0.5) transparent rgba(0,132,255,0.5) transparent",
-                    transition: 'border-color 0.3s ease',
+                    // transition: 'border-color 0.3s ease',
                     animation: "spin 1s linear infinite",
                     WebkitAnimation: "spin 1s linear infinite"
                   }}
@@ -146,9 +146,9 @@ const NavBar = () => {
           
             {/* Divider Line */}
             <div
-              className="w-full h-[4px] bg-gray-300 mb-2"
+              className="w-full mb-3"
               style={{
-                backgroundColor: "#D1D5DB", // Tailwind gray-300 fallback
+                borderTop: "3px solid #D1D5DB", // Adding border instead of background
               }}
             ></div>
 
