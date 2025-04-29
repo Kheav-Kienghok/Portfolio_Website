@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode, FaUserLock } from 'react-icons/fa';
+import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode, FaUserLock, FaCalendarAlt } from 'react-icons/fa';
 
 const projects = [
   {
@@ -47,6 +47,18 @@ const projects = [
     description: 'A secure authentication application with login and registration features. Built with React and FastAPI, it focuses on form validation and password hashing. The app is containerized with Docker for easy deployment, providing a secure and scalable solution for web applications.',
     link: 'https://github.com/Kheav-Kienghok/AuthenticatePage',
     icon: <FaUserLock className="text-5xl text-blue-500" style={{ color: '#3b82f6' }} />, // Fallback color blue-500
+  },
+  {
+    id: 6,
+    title: (
+      <>
+        Eventhub <br />
+        Microservices
+      </>
+    ),
+    description: 'A microservices-based event management platform built with Node.js, Express, and MongoDB. Supports event creation, booking, and admin features. Dockerized for easy deployment with modular, RESTful services.',
+    link: 'https://github.com/Kheav-Kienghok/Eventhub_microservices',
+    icon: <FaCalendarAlt className="text-5xl text-purple-500" style={{ color: '#8b5cf6' }} />, // Fallback color purple-500
   }
 ];
 
