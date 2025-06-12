@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode, FaUserLock, FaCalendarAlt } from 'react-icons/fa';
+import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode, FaUserLock, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
 
 const projects = [
   {
@@ -59,6 +59,18 @@ const projects = [
     description: 'A microservices-based event management platform built with Node.js, Express, and MongoDB. Supports event creation, booking, and admin features. Dockerized for easy deployment with modular, RESTful services.',
     link: 'https://github.com/Kheav-Kienghok/Eventhub_microservices',
     icon: <FaCalendarAlt className="text-5xl text-purple-500" style={{ color: '#8b5cf6' }} />, // Fallback color purple-500
+  },
+  {
+    id: 7,
+    title: (
+      <>
+        Khmer-English <br />
+        News Scraper
+      </>
+    ),
+    description: 'Volunteer-built bilingual scraper for Cambodia’s Ministry of Commerce site. Uses aiohttp, BeautifulSoup, and sentence-transformers to align Khmer-English news. Async, efficient, and supports CSV/DB storage.',
+    link: 'https://github.com/Kheav-Kienghok/MoC-scraper.git',
+    icon: <FaGlobe className="text-5xl text-blue-500" />,
   }
 ];
 
@@ -86,20 +98,20 @@ const Projects = () => {
         </p>
 
 
-        <div 
+        <div
           className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
 
           {projects.slice().reverse().map((project) => (
-            <div 
-              key={project.id} 
+            <div
+              key={project.id}
               className=" project-border-animated relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.3)',  // Fallback for bg-white + bg-opacity-30
                 backdropFilter: 'blur(10px)',  // Fallback for backdrop-blur-lg
                 WebkitBackdropFilter: 'blur(10px)',  // Safari fallback
                 border: '1px solid rgba(255, 255, 255, 0.2)',  // Fallback for border-white/20
-              }}  
+              }}
             >
 
               <div className="mb-4 z-10">{project.icon}</div>
@@ -132,7 +144,7 @@ const Projects = () => {
                   backdropFilter: 'blur(8px)',
                   WebkitBackdropFilter: 'blur(8px)',
                 }}
-              > 
+              >
                 <FaGithub className="text-2xl text-gray-800" style={{ color: '#1f2937' }} /> View on GitHub
               </Link>
 
@@ -140,7 +152,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
- 
+
     </div>
   );
 };
