@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaUniversity, FaCamera, FaCode, FaLaptopCode, FaUserLock, FaCalendarAlt, FaGlobe } from 'react-icons/fa';
 
@@ -70,12 +70,37 @@ const projects = [
     ),
     description: 'Volunteer-built bilingual scraper for Cambodia’s Ministry of Commerce site. Uses aiohttp, BeautifulSoup, and sentence-transformers to align Khmer-English news. Async, efficient, and supports CSV/DB storage.',
     link: 'https://github.com/Kheav-Kienghok/MoC-scraper.git',
-    icon: <FaGlobe className="text-5xl text-blue-500" />,
+    icon: <FaGlobe className="text-5xl text-blue-500" style={{ color: '#3b82f6' }} />,
   }
 ];
 
 
 const Projects = () => {
+
+
+  // State to manage the number of visible projects
+  const [visibleCount, setVisibleCount] = useState(6); // Default for desktop
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 768; // Tailwind 'md' breakpoint
+      setIsMobile(mobile);
+      setVisibleCount(mobile ? 3 : 6); // Set based on screen size
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + (isMobile ? 3 : 3));
+  };
+
+  const isAllShown = visibleCount >= projects.length;
+
   return (
 
     <div className="font-[Lato-Thin] py-10 mb-20">
@@ -102,55 +127,92 @@ const Projects = () => {
           className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
 
-          {projects.slice().reverse().map((project) => (
-            <div
-              key={project.id}
-              className=" project-border-animated relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
+          {projects
+            .slice()
+            .reverse()
+            .slice(0, visibleCount)
+            .map((project) => (
+              <div
+                key={project.id}
+                className=" project-border-animated relative bg-white bg-opacity-30 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl p-6 text-center flex flex-col items-center"
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)',  // Fallback for bg-white + bg-opacity-30
+                  backdropFilter: 'blur(10px)',  // Fallback for backdrop-blur-lg
+                  WebkitBackdropFilter: 'blur(10px)',  // Safari fallback
+                  border: '1px solid rgba(255, 255, 255, 0.2)',  // Fallback for border-white/20
+                }}
+              >
+
+                <div className="mb-4 z-10">{project.icon}</div>
+
+                <h3 className="text-2xl font-semibold text-gray-800 z-10"
+                  style={{
+                    color: '#1F2937', // Equivalent to Tailwind's text-gray-800
+                  }}
+                >
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-600 mt-3 z-10"
+                  style={{
+                    color: '#4B5563', // Equivalent to Tailwind's text-gray-600
+                  }}
+                >
+                  {project.description}
+                </p>
+
+                <div className="mt-1 flex-grow"></div> {/* Empty space to push the button to the bottom */}
+
+                <Link
+                  to={project.link}
+                  target='_blank'
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors font-semibold bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md hover:bg-white/30 z-10"
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                  }}
+                >
+                  <FaGithub className="text-2xl text-gray-800" style={{ color: '#1f2937' }} /> View on GitHub
+                </Link>
+
+
+              </div>
+
+            ))}
+
+
+        </div>
+
+        {!isAllShown && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handleLoadMore}
+              className="text-white font-semibold px-6 py-2 rounded-lg shadow bg-blue-600 hover:bg-blue-700 transition-colors"
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.3)',  // Fallback for bg-white + bg-opacity-30
-                backdropFilter: 'blur(10px)',  // Fallback for backdrop-blur-lg
-                WebkitBackdropFilter: 'blur(10px)',  // Safari fallback
-                border: '1px solid rgba(255, 255, 255, 0.2)',  // Fallback for border-white/20
+                backgroundColor: '#2563EB', // Fallback for bg-blue-600
+                color: 'white', // Fallback for text-white
+                padding: '0.5rem 1.5rem', // Fallback for px-6 py-2
+                borderRadius: '0.5rem', // Fallback for rounded-lg
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)', // Fallback for shadow
+                fontWeight: '600', // Fallback for font-semibold
+                transition: 'all 0.3s ease', // Fallback for transition-colors
+                border: 'none',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = '#1D4ED8'; // Fallback for hover:bg-blue-700
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = '#2563EB'; // Reset to original color
               }}
             >
+              Load More
+            </button>
+          </div>
+        )}
 
-              <div className="mb-4 z-10">{project.icon}</div>
-
-              <h3 className="text-2xl font-semibold text-gray-800 z-10"
-                style={{
-                  color: '#1F2937', // Equivalent to Tailwind's text-gray-800
-                }}
-              >
-                {project.title}
-              </h3>
-
-              <p className="text-gray-600 mt-3 z-10"
-                style={{
-                  color: '#4B5563', // Equivalent to Tailwind's text-gray-600
-                }}
-              >
-                {project.description}
-              </p>
-
-              <div className="mt-1 flex-grow"></div> {/* Empty space to push the button to the bottom */}
-
-              <Link
-                to={project.link}
-                target='_blank'
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors font-semibold bg-white/20 px-4 py-2 rounded-lg backdrop-blur-md hover:bg-white/30 z-10"
-                style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                }}
-              >
-                <FaGithub className="text-2xl text-gray-800" style={{ color: '#1f2937' }} /> View on GitHub
-              </Link>
-
-            </div>
-          ))}
-        </div>
       </div>
 
     </div>
