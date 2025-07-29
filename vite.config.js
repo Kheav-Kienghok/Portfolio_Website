@@ -7,7 +7,8 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  base: '/Portfolio_Website/',
+  base: './',
+  // base: '/Portfolio_Website/',
   plugins: [react(),
     tailwindcss(),
   ],
