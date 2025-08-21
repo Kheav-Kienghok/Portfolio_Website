@@ -1,6 +1,6 @@
 import React from "react";
-import { FaPython, FaJs, FaAws, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, FaGit, FaGithub, FaJava } from "react-icons/fa";
-import { SiFastapi, SiMysql, SiSqlite, SiMongodb, SiTailwindcss, SiKubernetes } from "react-icons/si";
+import { FaPython, FaJs, FaAws, FaHtml5, FaCss3Alt, FaNodeJs, FaDocker, FaGit, FaGithub, FaJava, FaReact } from "react-icons/fa";
+import { SiFastapi, SiMysql, SiSqlite, SiMongodb, SiTailwindcss, SiKubernetes, SiExpress, SiFlask } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import AWS_Achievement from "./components/AWS_Achievement";
 
@@ -13,14 +13,14 @@ const Skills = () => {
           color: '#2563EB' // Equivalent to Tailwind's text-blue-600
         }}
       >
-        Technical Skills
+        Full-Stack Development Skills
       </h2>
       <p className="text-lg text-gray-600 lg:mb-10 lg:m-[30px] m-[30px] mb-7"
         style={{
           color: '#4B5563' // Equivalent to Tailwind's text-gray-600
         }}
       >
-        Here are some of the technologies and tools I work with:
+        Technologies and tools I use to build complete web applications from frontend to backend:
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:grid-cols-2 gap-4 lg:gap-8 text-lg">
@@ -39,16 +39,22 @@ const Skills = () => {
               style: { border: '4px solid #2563eb' }
             },
             { 
-              name: "Tailwind CSS", 
-              icon: <SiTailwindcss size={50} className="text-teal-400" style={{ color: '#2dd4bf' }} />, 
-              border: "border-teal-400",
-              style: { border: '4px solid #2dd4bf' }
-            },
-            { 
               name: "JavaScript", 
               icon: <FaJs size={50} className="text-yellow-500" style={{ color: '#facc15' }} />, 
               border: "border-yellow-500",
               style: { border: '4px solid #facc15' }
+            },
+            { 
+              name: "React", 
+              icon: <FaReact size={50} className="text-cyan-400" style={{ color: '#22d3ee' }} />, 
+              border: "border-cyan-400",
+              style: { border: '4px solid #22d3ee' }
+            },
+            { 
+              name: "Tailwind CSS", 
+              icon: <SiTailwindcss size={50} className="text-teal-400" style={{ color: '#2dd4bf' }} />, 
+              border: "border-teal-400",
+              style: { border: '4px solid #2dd4bf' }
             }
           ]},
           { category: "Backend", skills: [
@@ -57,12 +63,6 @@ const Skills = () => {
               icon: <FaPython size={50} className="text-yellow-600" style={{ color: '#ca8a04' }} />, 
               border: "border-blue-500", 
               style: { border: '4px solid #3b82f6' } 
-            },
-            { 
-              name: "Java", 
-              icon: <FaJava size={50} className="text-red-600" style={{ color: '#dc2626' }} />, 
-              border: "border-red-600", 
-              style: { border: '4px solid #dc2626' } 
             },
             { 
               name: "Node.js", 
@@ -75,6 +75,24 @@ const Skills = () => {
               icon: <SiFastapi size={50} className="text-teal-500" style={{ color: '#14b8a6' }} />, 
               border: "border-teal-500", 
               style: { border: '4px solid #14b8a6' } 
+            },
+            { 
+              name: "Express.js", 
+              icon: <SiExpress size={50} className="text-gray-700" style={{ color: '#374151' }} />, 
+              border: "border-gray-700", 
+              style: { border: '4px solid #374151' } 
+            },
+            { 
+              name: "Flask", 
+              icon: <SiFlask size={50} className="text-gray-800" style={{ color: '#1f2937' }} />, 
+              border: "border-gray-800", 
+              style: { border: '4px solid #1f2937' } 
+            },
+            { 
+              name: "Java", 
+              icon: <FaJava size={50} className="text-red-600" style={{ color: '#dc2626' }} />, 
+              border: "border-red-600", 
+              style: { border: '4px solid #dc2626' } 
             }
           ]},{ category: "Databases", skills: [
             { 
